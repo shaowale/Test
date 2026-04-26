@@ -68,3 +68,16 @@ gh workflow run CI
 1. 在 GitHub 仓库 `Settings -> Secrets and variables -> Actions` 中补充必要机密（如果后续需要部署）。
 2. 确认默认分支是否为 `main`。
 3. 若你希望自动部署到 Vercel，可再加一个 `deploy.yml` workflow（我可以继续帮你补）。
+
+
+## 自动发布到 Vercel（GitHub Actions）
+
+仓库已提供：`.github/workflows/vercel-deploy.yml`。
+
+请在 GitHub 仓库 Secrets 中配置：
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+配置后，推送到 `main` 会自动触发生产部署。
+

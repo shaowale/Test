@@ -50,11 +50,29 @@ vercel --prod
 
 > 已添加 `vercel.json`，确保刷新 `/skills/...` 这类前端路由时不会 404。
 
+
+## GitHub + Vercel 自动发布（已内置）
+
+仓库已新增 `.github/workflows/vercel-deploy.yml`：当 `main` 有新提交时自动部署到 Vercel 生产环境。
+
+你只需要在 GitHub 仓库里配置以下 Secrets（`Settings -> Secrets and variables -> Actions`）：
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+配置完成后，每次推送到 `main` 都会自动执行：
+1. `npm run lint`
+2. `npm run typecheck`
+3. `npm run test`
+4. `npm run build`
+5. Vercel 生产部署
+
 ## 手机上验证清单
 
 拿到线上 URL 后，在手机浏览器逐项验证：
 
-1. 打开首页是否正常显示。
+1. 打开首页是否正常显示，并确认“当前版本标记 / 最近修改时间（UTC）”已更新。
 2. 进入 Skill 列表页是否有默认数据。
 3. 在 Skill 创建页新增一条 Skill。
 4. 跳转到 Skill 详情页是否能看到刚创建的数据。
