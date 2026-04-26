@@ -17,13 +17,46 @@ git remote add origin <你的GitHub仓库URL>
 git push -u origin work:main
 ```
 
-## 绑定 GitHub CLI（可选但推荐）
+## GitHub 凭证建议（重要）
+
+> **不要把 GitHub Token 直接发在聊天里。**
+> 推荐使用 `gh auth login --web` 在浏览器授权，或者在本机安全保存 Token。
+
+推荐方式：
 
 ```bash
-gh auth login
+gh auth login --web --git-protocol https
 ```
 
-登录后可直接：
+验证登录状态：
+
+```bash
+gh auth status
+```
+
+如果必须使用 Token，请在本机终端输入（避免明文留痕）：
+
+```bash
+export GH_TOKEN=<your_token>
+gh auth status
+```
+
+## 安装 GitHub CLI（gh）
+
+- macOS（Homebrew）
+  ```bash
+  brew install gh
+  ```
+- Ubuntu / Debian
+  ```bash
+  sudo apt install gh
+  ```
+- Windows（winget）
+  ```powershell
+  winget install GitHub.cli
+  ```
+
+## 常用命令
 
 ```bash
 gh repo view

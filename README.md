@@ -87,3 +87,5 @@ src/
 ```bash
 ./scripts/setup_context.sh
 ```
+
+凭证安全建议：优先使用 `gh auth login --web` 浏览器授权，不要在聊天中明文发送 GitHub Token。
