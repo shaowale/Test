@@ -1,0 +1,14 @@
+procurement_stage,current_public_assets,best_references,coverage_level,internal_skill_needed,priority,why_it_matters,notes
+spend_analysis,有通用表格/分析技能但采购专属较少,anthropic_xlsx_skill|w95_vendor_evaluation,medium,spend-category-analysis-skill,P1,识别尾部支出与节省机会,需接企业PO和发票数据
+intake_sow,公开素材稀缺且多为模板,w95_rfp_builder,low,procurement-intake-sow-builder,P0,需求质量决定后续采购质量,高价值高缺口
+sourcing_strategy,有部分采购流程模块可参考,oca_purchase_workflow|erpnext_core,low,sourcing-strategy-advisor,P1,错误寻源方式会显著影响成本与周期,需要企业政策规则引擎
+supplier_discovery,有buyer-eval与vendor管理模板,buyer_eval_skill|w95_vendor_management,medium,supplier-due-diligence-skill,P0,供应商准入与尽调决定风险边界,需引入合规和外部数据源
+rfx_builder,模板和项目较多,w95_rfp_builder|anthropic_pdf_skill,medium,rfp-rfq-builder,P0,RFI/RFQ/RFP是采购入口文档,可先做文档生成+校验
+proposal_evaluation,公开项目覆盖较好,ai_powered_rfp_analyzer|buyer_eval_skill|run_llama_auto_rfp,high,vendor-proposal-evaluator,P0,评标是AI最容易创造价值环节,注意人审与证据追溯
+tco_pricing,有模板与表格能力,w95_vendor_evaluation|anthropic_xlsx_skill,medium,tco-pricing-analysis-skill,P0,TCO影响中长期成本和续约议价,需企业历史价格库
+negotiation,有BATNA与谈判模板,w95_contract_negotiation|ai_powered_rfp_analyzer,medium,contract-negotiation-prep,P0,谈判策略直接影响价格与条款,需要组织经验沉淀
+contract_review,有法律风险Agent样例但非企业条款库,ai_powered_rfp_analyzer|microsoft_rfp_response_accel,medium,procurement-contract-risk-review,P0,合同风险与法律责任高,必须法务复核
+guided_buying,主要来自ERP/Odoo流程模块,erpnext_core|oca_purchase_workflow,low,guided-buying-policy-checker,P1,关系合规采购与审批效率,需强系统集成与规则配置
+acceptance_invoice,公开AI资产少业务系统素材多,erpnext_core|oca_purchase_workflow,low,service-acceptance-invoice-exception-skill,P1,影响付款正确性与舞弊风险,依赖ERP与财务数据
+supplier_performance,有评分卡模板与运营能力,w95_supplier_scorecard|ai_evos_repo,medium,supplier-scorecard-renewal-advisor,P0,续约与退出决策关键,需要SLA/投诉/成本多源数据
+category_specialist,能源/物流等专项素材较多,ai_evos_energy_procurement|chaincommand,medium,category-specialist-skill-pack,P2,支持二三阶段行业深度,先从SaaS和IT间接采购起步
