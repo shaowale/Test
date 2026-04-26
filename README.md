@@ -8,6 +8,7 @@
 - Skill 列表页 `/skills`
 - Skill 创建页 `/skills/new`
 - Skill 详情页 `/skills/:id`
+- 文档中心 `/docs`（可直接打开项目文档与报告）
 
 数据存储：本地 `localStorage` + 默认 JSON，无需数据库。
 

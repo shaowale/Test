@@ -11,6 +11,7 @@ export function Layout() {
           <NavLink to="/">首页</NavLink>
           <NavLink to="/skills">Skill 列表</NavLink>
           <NavLink to="/skills/new">创建 Skill</NavLink>
+          <NavLink to="/docs">文档中心</NavLink>
         </nav>
       </header>
       <main className="page-container">
