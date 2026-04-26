@@ -1,0 +1,11 @@
+source_id,name,url,source_hint,priority,reason_to_include,status,notes
+anthropic_skills,Anthropic 官方 Skills,https://github.com/anthropics/skills,agent_skill_repository,P0,Skill工程组织与SKILL.md标准参考,done,含docx/pdf/pptx/xlsx与skill-creator
+w95_corporate_skills,w95 awesome-claude-corporate-skills,https://github.com/w95/awesome-claude-corporate-skills,agent_skill_repository,P0,采购与供应链Skill菜单参考,done,12-procurement-supply-chain模块重点
+ai_evos_skills,ai-evos agent-skills,https://github.com/ai-evos/agent-skills,agent_skill_repository,P0,行业深度Skill写法与评测指标参考,done,覆盖物流/库存/能源采购
+buyer_eval_skill,buyer-eval-skill,https://github.com/salespeak-ai/buyer-eval-skill,agent_skill_repository,P1,SaaS供应商评估Skill参考,done,强调证据透明与评分
+ai_powered_rfp_analyzer,AI-Powered-RFP-Analyzer,https://github.com/aadrikasingh/AI-Powered-RFP-Analyzer,agent_project,P1,采购方评标多Agent架构参考,done,Azure + Semantic Kernel
+microsoft_rfp_response_accel,Microsoft RFP Response Accelerator,https://github.com/microsoft/agent-for-rfp-response-solution-accelerator,agent_project,P1,RFP响应流程与人审协同参考,done,仓库标注不再维护
+run_llama_auto_rfp,run-llama auto_rfp,https://github.com/run-llama/auto_rfp,agent_project,P1,RFP问答自动化产品形态参考,done,多租户+知识库检索+来源归因
+erpnext,ERPNext,https://github.com/frappe/erpnext,business_system,P2,采购流程对象和业务数据模型参考,done,ERP系统非Agent Skill
+oca_purchase_workflow,OCA Purchase Workflow,https://github.com/OCA/purchase-workflow,business_system,P2,Odoo采购流程扩展模块参考,done,purchase_request/tier_validation等
+chaincommand,ChainCommand Autonomous Supply Chain,https://github.com/hsinnearth7/ChainCommand_Autonomous_Supply_Chain_Optimizer_Agent_Team,algorithm_project,P2,供应链优化与CTB算法参考,done,偏供应链运营与直接采购
