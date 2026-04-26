@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procurement Agent Skills Research</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; background:#f6f7fb; }
+    .card { background:white; border-radius:10px; padding:12px; margin:10px 0; }
+    .row { display:flex; gap:8px; flex-wrap:wrap; }
+    select,input { padding:8px; }
+    small { color:#555; }
+  </style>
+</head>
+<body>
+  <h1>调研管理页（静态）</h1>
+  <div class="row">
+    <select id="type"><option value="">全部 source_type</option></select>
+    <input id="stage" placeholder="筛选 procurement_stage" />
+    <select id="action"><option value="">全部 recommended_action</option></select>
+  </div>
+  <div id="list"></div>
+<script>
+const csvUrl = '../data/skills_registry.csv';
+const list = document.getElementById('list');
+const typeSel = document.getElementById('type');
+const stageInput = document.getElementById('stage');
+const actionSel = document.getElementById('action');
+
+function parseCSV(text){
+  const rows = text.trim().split('\n').map(r=>r.split(','));
+  const headers = rows.shift();
+  return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]||''])));
+}
+
+function uniq(arr){ return [...new Set(arr.filter(Boolean))]; }
+
+function render(data){
+  const t = typeSel.value;
+  const s = stageInput.value.trim();
+  const a = actionSel.value;
+  const filtered = data.filter(x =>
+    (!t || x.source_type===t) &&
+    (!a || x.recommended_action===a) &&
+    (!s || (x.procurement_stages||'').includes(s))
+  );
+  list.innerHTML = filtered.map(x => `
+    <div class="card">
+      <b>${x.name}</b> <small>[${x.source_type}]</small><br/>
+      <small>stage: ${x.procurement_stages} | action: ${x.recommended_action} | value: ${x.overall_value_score}</small>
+      <p>${x.summary_cn}</p>
+      <small>takeaways: ${x.key_takeaways}</small><br/>
+      <small>risks: ${x.risks}</small><br/>
+      <a href="${x.source_url}" target="_blank">source</a>
+    </div>`).join('');
+}
+
+fetch(csvUrl).then(r=>r.text()).then(t=>{
+  const data=parseCSV(t);
+  uniq(data.map(d=>d.source_type)).forEach(v=>typeSel.innerHTML += `<option>${v}</option>`);
+  uniq(data.map(d=>d.recommended_action)).forEach(v=>actionSel.innerHTML += `<option>${v}</option>`);
+  [typeSel,stageInput,actionSel].forEach(el=>el.addEventListener('input',()=>render(data)));
+  render(data);
+});
+</script>
+</body>
+</html>
