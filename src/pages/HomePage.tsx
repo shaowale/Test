@@ -1,26 +1,42 @@
 import { Link } from 'react-router-dom';
 
-const DEPLOY_MARK = 'deploy-2026-04-26-02';
-const LAST_UPDATED_UTC = '2026-04-26 08:40 UTC';
+const DEPLOY_MARK = 'deploy-2026-04-26-03';
+const LAST_UPDATED_UTC = '2026-04-26 09:05 UTC';
+
+const highlights = [
+  '需求澄清 → 供应商评估 → 合同风险审查 全链路支持',
+  '主界面直达文档中心，可快速查看调研报告与矩阵',
+  '移动端优先设计，适合老板手机快速验收'
+];
 
 const quickEntries = [
-  { to: '/skills', label: '进入 Skill 列表', desc: '查看当前 Skill 数据与详情。' },
-  { to: '/skills/new', label: '新建 Skill', desc: '快速录入并验证本地持久化。' },
-  { to: '/docs', label: '打开文档中心', desc: '直接访问 README、调研报告与评估矩阵。' }
+  { to: '/skills', label: '采购 Skill 看板', desc: '查看当前 Skill 清单和能力分布。' },
+  { to: '/skills/new', label: '新增业务 Skill', desc: '录入你家的新规则、模板和经验。' },
+  { to: '/docs', label: '调研文档中心', desc: '直接查看报告、评估矩阵和落地说明。' }
 ];
 
 export function HomePage() {
   return (
-    <section className="card">
-      <h1>首页</h1>
-      <p>这是一个适合手机端验证的 Skill 管理最小应用。</p>
-      <p>现在可以从主界面直接进入 Skill 功能和文档中心。</p>
+    <section className="home-stack">
+      <article className="card hero-card">
+        <h1>你家的 AI 采购 Skill 工作台</h1>
+        <p>这是你当前版本的首页改版，和最初版本已经不一样，便于你直观看到发布差异。</p>
 
-      <div className="release-badge" aria-label="release-info">
-        <strong>当前版本标记：</strong> {DEPLOY_MARK}
-        <br />
-        <strong>最近修改时间（UTC）：</strong> {LAST_UPDATED_UTC}
-      </div>
+        <div className="release-badge" aria-label="release-info">
+          <strong>当前版本标记：</strong> {DEPLOY_MARK}
+          <br />
+          <strong>最近修改时间（UTC）：</strong> {LAST_UPDATED_UTC}
+        </div>
+      </article>
+
+      <article className="card">
+        <h2>本轮上线重点</h2>
+        <ul className="bullet-list">
+          {highlights.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </article>
 
       <div className="quick-grid">
         {quickEntries.map((entry) => (

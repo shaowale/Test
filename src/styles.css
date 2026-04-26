@@ -155,3 +155,19 @@ button {
   display: grid;
   gap: 12px;
 }
+
+.home-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #eff6ff, #ffffff 55%);
+}
+
+.bullet-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
